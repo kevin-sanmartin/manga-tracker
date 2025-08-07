@@ -1,0 +1,96 @@
+@use "@/themes/constants.module.scss";
+
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	.header {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		text-align: center;
+
+		.title {
+			font-size: 24px;
+			font-weight: 600;
+			margin: 0;
+			color: #333;
+		}
+
+		.subtitle {
+			font-size: 14px;
+			color: constants.$grey;
+			margin: 0;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		.inputs {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+		}
+
+		.error {
+			padding: 12px;
+			background-color: rgba(255, 0, 0, 0.1);
+			border: 1px solid rgba(255, 0, 0, 0.3);
+			border-radius: 8px;
+			color: #d32f2f;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		.actions {
+			display: flex;
+			justify-content: center;
+
+			.submit-button {
+				min-width: 140px;
+				padding: 12px 24px;
+				font-size: 14px;
+				white-space: nowrap;
+				border-radius: 4px;
+				cursor: pointer;
+				border: none;
+				background-color: constants.$orange;
+				color: white;
+				transition:
+					background-color 0.3s,
+					color 0.3s;
+
+				&:hover:not(:disabled) {
+					background-color: rgba(constants.$orange, 0.8);
+				}
+
+				&:active:not(:disabled) {
+					background-color: rgba(constants.$orange, 0.6);
+				}
+
+				&:disabled {
+					background-color: constants.$grey;
+					cursor: not-allowed;
+				}
+			}
+		}
+	}
+
+	.switch {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding-top: 16px;
+		border-top: 1px solid constants.$background-darker;
+
+		.switch-text {
+			font-size: 14px;
+			color: constants.$grey;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+@use "@/themes/constants.module.scss";
+
+.root {
+	flex: 1;
+	background-color: constants.$background;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	.search-container {
+		padding: 16px;
+	}
+
+	.manga-list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding: 16px;
+
+		.no-results {
+			color: constants.$grey;
+			text-align: center;
+			margin-top: 20px;
+		}
+	}
+}

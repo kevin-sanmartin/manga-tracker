@@ -1,0 +1,103 @@
+@use "@/themes/constants.module.scss";
+
+.result-item {
+	display: flex;
+	gap: 12px;
+	padding: 16px;
+	border: 1px solid constants.$background-darker;
+	border-radius: 8px;
+	cursor: pointer;
+	background: constants.$background;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		border-color: constants.$orange;
+		background: linear-gradient(135deg, rgba(constants.$orange, 0.02) 0%, rgba(constants.$orange, 0.06) 100%);
+		box-shadow: 0 8px 24px rgba(constants.$orange, 0.15);
+	}
+
+	.result-image {
+		width: 70px;
+		height: 95px;
+		border-radius: 8px;
+		background-color: constants.$background-darker;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.result-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1;
+		gap: 8px;
+		min-width: 0;
+
+		.result-main {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+
+			.result-title {
+				font-size: 14px;
+				font-weight: 600;
+				color: #333;
+				line-height: 1.3;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				word-break: break-word;
+			}
+
+			.result-author {
+				display: flex;
+				align-items: center;
+				gap: 6px;
+				font-size: 12px;
+				color: constants.$grey;
+				min-width: 0;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+				.meta-icon {
+					font-size: 14px;
+					flex-shrink: 0;
+				}
+			}
+		}
+	}
+
+	.result-stats {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		flex-wrap: wrap;
+
+		.volume-badge,
+		.status-badge,
+		.score-badge {
+			padding: 4px 8px;
+			font-size: 12px;
+			border-radius: 4px;
+			font-weight: 500;
+			white-space: nowrap;
+		}
+
+		.volume-badge {
+			background-color: rgba(constants.$orange, 0.1);
+			color: constants.$orange;
+		}
+		.status-badge {
+			background-color: rgba(constants.$grey, 0.1);
+			color: constants.$grey;
+		}
+		.score-badge {
+			background-color: rgba(255, 193, 7, 0.1);
+			color: #f57c00;
+		}
+	}
+}

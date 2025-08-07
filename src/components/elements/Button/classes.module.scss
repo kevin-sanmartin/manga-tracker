@@ -1,0 +1,68 @@
+@use "@/themes/constants.module.scss";
+
+.root {
+	font-size: 14px;
+	white-space: nowrap;
+	padding: 10px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	transition:
+		background-color 0.3s,
+		color 0.3s;
+
+	&.contained {
+		background-color: constants.$orange;
+		color: white;
+
+		&:hover {
+			background-color: rgba(constants.$orange, 0.8);
+		}
+
+		&:active {
+			background-color: rgba(constants.$orange, 0.6);
+		}
+
+		&:disabled {
+			background-color: constants.$grey;
+			cursor: not-allowed;
+		}
+	}
+
+	&.outlined {
+		border: 1px solid constants.$orange;
+		color: constants.$orange;
+
+		&:hover {
+			background-color: rgba(constants.$orange, 0.1);
+		}
+
+		&:active {
+			background-color: rgba(constants.$orange, 0.2);
+		}
+
+		&:disabled {
+			border-color: constants.$grey;
+			color: constants.$grey;
+			cursor: not-allowed;
+		}
+	}
+
+	&.text {
+		color: constants.$orange;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:active {
+			color: rgba(constants.$orange, 0.8);
+		}
+
+		&:disabled {
+			color: constants.$grey;
+			cursor: not-allowed;
+		}
+	}
+}

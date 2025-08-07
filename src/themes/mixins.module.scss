@@ -1,0 +1,27 @@
+@use "constants.module.scss";
+
+@mixin mobile {
+	@media (max-width: constants.$screen-sm) { @content; }
+}
+
+@mixin mobile-xs {
+	@media (max-width: constants.$screen-xs) { @content; }
+}
+
+@mixin font-responsive($desktop: 16px, $mobile: 14px, $mobile-xs: 12px) {
+	font-size: $desktop;
+	@include mobile { font-size: $mobile; }
+	@include mobile-xs { font-size: $mobile-xs; }
+}
+
+@mixin gap-responsive($desktop: 16px, $mobile: 12px, $mobile-xs: 8px) {
+	gap: $desktop;
+	@include mobile { gap: $mobile; }
+	@include mobile-xs { gap: $mobile-xs; }
+}
+
+@mixin padding-responsive($desktop: 20px, $mobile: 16px, $mobile-xs: 12px) {
+	padding: $desktop;
+	@include mobile { padding: $mobile; }
+	@include mobile-xs { padding: $mobile-xs; }
+}

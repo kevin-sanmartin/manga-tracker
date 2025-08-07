@@ -1,0 +1,19 @@
+@use "@/themes/constants.module.scss";
+
+.root {
+	width: fit-content;
+	height: fit-content;
+	padding: 4px 8px;
+	border-radius: 8px;
+	font-size: 12px;
+	color: white;
+	white-space: nowrap;
+
+	&.in-progress {
+		background-color: constants.$orange;
+	}
+
+	&.completed {
+		background-color: rgb(51, 173, 51);
+	}
+}

@@ -1,0 +1,36 @@
+@use "@/themes/constants.module.scss";
+
+.floating-button {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background-color: constants.$orange;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: all 0.3s ease;
+	z-index: 1000;
+
+	&:hover {
+		background-color: rgba(constants.$orange, 0.9);
+		transform: scale(1.1);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+	}
+
+	&:active {
+		transform: scale(0.95);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	}
+
+	.icon {
+		width: 24px;
+		height: 24px;
+		color: white;
+	}
+}

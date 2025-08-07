@@ -1,0 +1,34 @@
+@use "@/themes/constants.module.scss";
+
+.root {
+	width: 100%;
+	z-index: 1;
+
+	&.box-shadow {
+		box-shadow: constants.$box-shadow;
+	}
+
+	&.background-white {
+		background-color: white;
+	}
+
+	&.background-orange {
+		background-color: constants.$orange;
+	}
+
+	&.background-transparent {
+		background-color: transparent;
+	}
+
+	.content {
+		width: 100%;
+		max-width: constants.$max-width;
+		margin: 0 auto;
+	}
+
+	&.scrollable {
+		flex: 1;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+}
