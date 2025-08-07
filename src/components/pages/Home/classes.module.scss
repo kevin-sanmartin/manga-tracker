@@ -9,6 +9,12 @@
 
 	.search-container {
 		padding: 16px;
+
+		.search-header {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+		}
 	}
 
 	.manga-list {

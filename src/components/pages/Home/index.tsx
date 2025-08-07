@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import classes from "./classes.module.scss";
 import Container from "../../elements/Container";
 import Input from "@/components/elements/Input";
+import LogoutButton from "@/components/elements/LogoutButton";
 import { FaSearch } from "react-icons/fa";
 import Card from "@/components/elements/Card";
 import { MangaService } from "@/services/MangaService";
@@ -28,7 +29,10 @@ export default function Home() {
 	return (
 		<main className={classes["root"]}>
 			<Container background="white" boxShadow className={classes["search-container"]}>
-				<Input id="search" value={searchQuery} onChange={setSearchQuery} placeholder="Rechercher un manga..." icon={FaSearch} />
+				<div className={classes["search-header"]}>
+					<Input id="search" value={searchQuery} onChange={setSearchQuery} placeholder="Rechercher un manga..." icon={FaSearch} />
+					<LogoutButton />
+				</div>
 			</Container>
 
 			<Container scrollable className={classes["manga-list"]}>
