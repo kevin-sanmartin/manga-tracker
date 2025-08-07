@@ -29,7 +29,7 @@ export default function Card(props: CardProps) {
 
 	const handleDeleteConfirm = useCallback(async () => {
 		if (!user) return;
-		
+
 		try {
 			await MangaService.getInstance().deleteManga(user, manga.id);
 			onDelete?.(manga.id);
@@ -76,7 +76,6 @@ export default function Card(props: CardProps) {
 				message={`Êtes-vous sûr de vouloir supprimer "${manga.title}" de votre bibliothèque ? Cette action est irréversible.`}
 				confirmText="Supprimer"
 				cancelText="Annuler"
-				isDestructive={true}
 			/>
 		</Fragment>
 	);
