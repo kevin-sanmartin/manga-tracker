@@ -71,11 +71,30 @@
 					min-width: fit-content;
 				}
 
-				.edit-icon {
-					width: 20px;
-					height: 20px;
-					color: constants.$orange;
-					cursor: pointer;
+				.icons-container {
+					display: flex;
+					gap: 8px;
+					align-items: center;
+
+					.edit-icon,
+					.delete-icon {
+						width: 20px;
+						height: 20px;
+						cursor: pointer;
+						transition: color 0.2s ease;
+
+						&:hover {
+							opacity: 0.7;
+						}
+					}
+
+					.edit-icon {
+						color: constants.$orange;
+					}
+
+					.delete-icon {
+						color: #ef4444;
+					}
 				}
 			}
 		}

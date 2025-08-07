@@ -2,6 +2,7 @@ import "@/themes";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { MangaProvider } from "@/contexts/MangaContext";
 import classes from "./layout.module.scss";
 // import NavMenu from "@/components/elements/NavMenu";
 import AuthGuard from "@/components/elements/AuthGuard";
@@ -21,13 +22,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 	return (
 		<html lang="fr" className={roboto.className}>
 			<AuthProvider>
-				<body className={classes["root"]}>
-					<AuthGuard>
-						{children}
-						{/* <NavMenu /> */}
-						<FloatingAddButton />
-					</AuthGuard>
-				</body>
+				<MangaProvider>
+					<body className={classes["root"]}>
+						<AuthGuard>
+							{children}
+							{/* <NavMenu /> */}
+							<FloatingAddButton />
+						</AuthGuard>
+					</body>
+				</MangaProvider>
 			</AuthProvider>
 		</html>
 	);

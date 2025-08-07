@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import { Manga } from "@tutkli/jikan-ts";
 import { MangaService } from "@/services/MangaService";
 import { useAuth } from "@/contexts/AuthContext";
+import { useMangaContext } from "@/contexts/MangaContext";
 
 const mangaService = MangaService.getInstance();
 
@@ -20,6 +21,7 @@ export default function ProgressStep(props: IProps) {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const { user } = useAuth();
+	const { triggerRefresh } = useMangaContext();
 
 	const handleProgressSubmit = useCallback(
 		async (e: React.FormEvent) => {
@@ -68,6 +70,8 @@ export default function ProgressStep(props: IProps) {
 				// Sauvegarder dans la BDD
 				await mangaService.createManga(user, mangaData);
 
+				// Déclencher le rafraîchissement de la liste
+				triggerRefresh();
 				props.onClose();
 			} catch (err: any) {
 				setError(err.message || "Une erreur est survenue");
@@ -75,7 +79,7 @@ export default function ProgressStep(props: IProps) {
 				setLoading(false);
 			}
 		},
-		[props.selectedManga, currentProgress, props.onClose, user],
+		[props.selectedManga, currentProgress, props.onClose, user, triggerRefresh],
 	);
 
 	return (
